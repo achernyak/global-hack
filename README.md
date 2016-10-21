@@ -1,24 +1,29 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Rails
 
-Things you may want to cover:
+``` bash
+# rvm - ruby version manager
+\curl -L https://get.rvm.io | bash -s stable
+source ~/.rvm/scripts/rvm
+rvm requirements
+rvm install 2.3.1
+rvm use 2.3.1
+rvm rubygems current
 
-* Ruby version
+# confirm ruby version (ruby 2.3.1)
+ruby --version
 
-* System dependencies
+# install gemfile deps
+gem install bundler
+bundle install
 
-* Configuration
+# database
+rake db:create db:migrate db:seed
 
-* Database creation
+# start server on port 3000 (default)
+rails s
+```
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Front End
+- Read public folder readme
