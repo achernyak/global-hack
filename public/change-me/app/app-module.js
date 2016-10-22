@@ -11,6 +11,7 @@
       'ngAria',
       'ngMaterial',
       'ui.router',
+      'ng-admin',
       'home'
     ]);
 }());
