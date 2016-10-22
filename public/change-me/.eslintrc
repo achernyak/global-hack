@@ -4,7 +4,9 @@
     "dustinspecker"
   ],
   "rules": {
-    "angular/ng_controller_name": [2, "/[A-Z].*Ctrl$/"],
-    "consistent-this": 0
+    "consistent-this": 0,
+    "one-var": 0,
+    "semi": 0,
+    "indent": 0
   }
 }
