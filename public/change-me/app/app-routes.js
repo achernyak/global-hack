@@ -9,8 +9,8 @@
     $urlRouterProvider.otherwise('/home');
     $stateProvider
       .state('app', {
-	controller: 'AppCtrl',
-	controllerAs: 'app'
+        controller: 'AppCtrl',
+        controllerAs: 'app'
       });
   }
 }());

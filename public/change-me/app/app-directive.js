@@ -10,11 +10,11 @@
    * @description
    *
    * @example
-     <example module="changeMe">
-       <file name="index.html">
-        <app></app>
-       </file>
-     </example>
+   <example module="changeMe">
+   <file name="index.html">
+   <app></app>
+   </file>
+   </example>
    *
    */
   angular
@@ -29,10 +29,9 @@
       replace: false,
       transclude: true,
       controllerAs: 'app',
-      controller: function ($mdSidenav) {
+      controller: function () {
         var vm = this;
         vm.name = 'app';
-	$mdSidenav('left').toggle();
       },
       link: function (scope, element, attrs) {
         /* jshint unused:false */
