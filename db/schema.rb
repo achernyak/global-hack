@@ -10,10 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161022204905) do
+ActiveRecord::Schema.define(version: 20161022222610) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "beds", force: :cascade do |t|
+    t.boolean  "family"
+    t.string   "name"
+    t.integer  "shelter_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["shelter_id"], name: "index_beds_on_shelter_id", using: :btree
+  end
 
   create_table "clients", force: :cascade do |t|
     t.string   "first_name"
@@ -21,10 +30,24 @@ ActiveRecord::Schema.define(version: 20161022204905) do
     t.string   "city"
     t.string   "state"
     t.string   "phone"
+    t.string   "email"
     t.date     "date_of_birth"
     t.string   "gender"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
+  end
+
+  create_table "reservations", force: :cascade do |t|
+    t.datetime "starts_at"
+    t.integer  "client_id"
+    t.integer  "shelter_id"
+    t.datetime "ends_at"
+    t.integer  "bed_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["bed_id"], name: "index_reservations_on_bed_id", using: :btree
+    t.index ["client_id"], name: "index_reservations_on_client_id", using: :btree
+    t.index ["shelter_id"], name: "index_reservations_on_shelter_id", using: :btree
   end
 
   create_table "shelters", force: :cascade do |t|
@@ -39,6 +62,7 @@ ActiveRecord::Schema.define(version: 20161022204905) do
     t.datetime "updated_at", null: false
     t.float    "lat"
     t.float    "lng"
+    t.integer  "checkins"
   end
 
   create_table "users", force: :cascade do |t|
@@ -51,4 +75,8 @@ ActiveRecord::Schema.define(version: 20161022204905) do
     t.datetime "updated_at",  null: false
   end
 
+  add_foreign_key "beds", "shelters"
+  add_foreign_key "reservations", "beds"
+  add_foreign_key "reservations", "clients"
+  add_foreign_key "reservations", "shelters"
 end
