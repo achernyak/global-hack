@@ -1,5 +1,5 @@
 class SheltersController < ApplicationController
-  before_action :set_shelter, only: [:show, :update, :destroy]
+  before_action :set_shelter, only: [:show, :update, :destroy, :checkin, :checkout]
 
   # GET /shelters
   def index
@@ -11,6 +11,28 @@ class SheltersController < ApplicationController
   # GET /shelters/1
   def show
     render json: @shelter
+  end
+
+  # PUT /shelters/1/checkin
+  def checkin
+    @shelter.checkins ||= 0
+    @shelter.checkins += 1
+    if @shelter.save
+      render json: @shelter
+    else
+      render json: @shelter.errors, status: :unprocessable_entity
+    end
+  end
+
+  # PUT /shelters/1/checkout
+  def checkout
+    @shelter.checkins ||= 0
+    @shelter.checkins -= 1
+    if @shelter.save
+      render json: @shelter
+    else
+      render json: @shelter.errors, status: :unprocessable_entity
+    end
   end
 
   # POST /shelters
