@@ -37,8 +37,8 @@ ActiveRecord::Schema.define(version: 20161022204905) do
     t.integer  "capacity"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.float    "latitude"
-    t.float    "longitude"
+    t.float    "lat"
+    t.float    "lng"
   end
 
   create_table "users", force: :cascade do |t|
