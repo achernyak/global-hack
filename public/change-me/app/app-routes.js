@@ -13,6 +13,7 @@
         .baseApiUrl('http://localhost:3000/');
 
     var user = nga.entity('users');
+    var shelter = nga.entity('shelters');
 
     // User
 
@@ -22,7 +23,7 @@
         nga.field('email'),
         nga.field('first_name'),
         nga.field('last_name'),
-	nga.field('description')
+        nga.field('description')
       ]);
 
     user.creationView()
@@ -31,10 +32,36 @@
         nga.field('email'),
         nga.field('first_name'),
         nga.field('last_name'),
-	nga.field('description')
+        nga.field('description')
       ]);
 
     admin.addEntity(user);
+
+    // Shelter
+
+    shelter.listView()
+      .fields([
+        nga.field('name'),
+        nga.field('address'),
+        nga.field('city'),
+        nga.field('state'),
+        nga.field('zip'),
+        nga.field('phone'),
+        nga.field('capacity')
+      ]);
+
+    shelter.creationView()
+      .fields([
+        nga.field('name'),
+        nga.field('address'),
+        nga.field('city'),
+        nga.field('state'),
+        nga.field('zip'),
+        nga.field('phone'),
+        nga.field('capacity')
+      ]);
+
+    admin.addEntity(shelter);
 
     $urlRouterProvider.otherwise('/dashboard');
 
