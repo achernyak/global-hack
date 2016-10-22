@@ -7,6 +7,8 @@
     "consistent-this": 0,
     "one-var": 0,
     "semi": 0,
-    "indent": 0
+    "indent": 0,
+    "angular/ng-controller-name": 0,
+    "angular/controller-name": 0
   }
 }

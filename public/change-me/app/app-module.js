@@ -10,8 +10,10 @@
     .module('changeMe', [
       'ngAria',
       'ngMaterial',
+      'leaflet-directive',
       'ui.router',
       'ng-admin',
-      'home'
+      'home',
+      'map'
     ]);
 }());

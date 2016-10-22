@@ -9,7 +9,7 @@
     var nga = NgAdminConfigurationProvider;
 
     var admin = nga
-        .application('Admin')
+        .application('Home')
         .baseApiUrl('http://localhost:3000/');
 
     var user = nga.entity('users');
