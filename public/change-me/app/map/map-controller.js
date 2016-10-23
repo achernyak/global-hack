@@ -33,7 +33,8 @@
 	var cords = R.pick(['lat', 'lng'], shelter);
 	var data = {
 	  message: "<div><strong>" + shelter.name + "</strong></div>" +
-	    "<div>" + shelter.phone + "</div>"
+	    "<div>" + shelter.phone + "</div>",
+    icon: { iconUrl: "http://localhost:3000/" + shelter.map_icon + ".png", iconSize: [25, 25] }
 	};
 
 	return R.merge(cords, data);
