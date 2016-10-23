@@ -76,9 +76,15 @@
 
     admin.addEntity(shelter);
 
+    // General
+
     admin.menu(nga.menu()
                .addChild(nga.menu(user))
                .addChild(nga.menu(shelter))
+	       .addChild(nga.menu()
+			 .title('Check In')
+			 .link('check-ins')
+			 .icon('<span class="glyphicon glyphicon-ok"></span>'))
                .addChild(nga.menu()
                          .title('Map')
                          .link('/map')

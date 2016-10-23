@@ -16,9 +16,9 @@
     var vm = this;
 
     vm.center = {
-      lat: 38.749054,
-      lng: -90.212801,
-      zoom: 12
+      lat: 38.6333972,
+      lng: -90.195599,
+      zoom: 14
     };
 
     vm.markers = {};
@@ -32,16 +32,14 @@
       var markers = R.map(function (shelter) {
 	var cords = R.pick(['lat', 'lng'], shelter);
 	var data = {
-	  label: {
-	    message: shelter.name
-	  },
-	  focus: true
+	  message: "<div><strong>" + shelter.name + "</strong></div>" +
+	    "<div>" + shelter.phone + "</div>"
 	};
 
 	return R.merge(cords, data);
       }, data);
 
-      $log.info(data[0]);
+      $log.info(data[35]);
 
       vm.markers = markers;
       $log.info(markers);

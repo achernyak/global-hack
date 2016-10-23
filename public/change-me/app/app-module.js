@@ -14,6 +14,7 @@
       'ui.router',
       'ng-admin',
       'home',
-      'map'
+      'map',
+      'checkIns'
     ]);
 }());
