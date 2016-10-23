@@ -5,7 +5,7 @@ class SheltersController < ApplicationController
   def index
     @shelters = Shelter.all
 
-    render json: @shelters
+    render json: @shelters.to_json(methods: :map_icon)
   end
 
   # GET /shelters/1

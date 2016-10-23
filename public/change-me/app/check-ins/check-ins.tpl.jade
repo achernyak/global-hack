@@ -1,2 +1,8 @@
-h2 checkIns
-p {{checkIns.ctrlName}}
+div.check-ins
+  div.counts
+    {{ checkIns.counts() }}
+  div.counters
+    button.inc(ng-click="checkIns.inc()")
+      i.fa.fa-plus
+    button.dec(ng-click="checkIns.dec()")
+      i.fa.fa-minus

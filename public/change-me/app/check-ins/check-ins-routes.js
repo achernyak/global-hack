@@ -9,7 +9,8 @@
     $stateProvider
       .state('checkIns', {
 	parent: 'main',
-        url: '/check-ins',
+        url: '/check-ins/:id',
+	params: { id: null },
         templateUrl: 'check-ins/check-ins.tpl.html',
         controller: 'CheckInsCtrl',
         controllerAs: 'checkIns'
