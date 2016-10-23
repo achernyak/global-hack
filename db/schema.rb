@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(version: 20161022222610) do
     t.string   "city"
     t.string   "state"
     t.string   "phone"
+    t.string   "email"
     t.date     "date_of_birth"
     t.string   "gender"
     t.datetime "created_at",    null: false
@@ -57,11 +58,11 @@ ActiveRecord::Schema.define(version: 20161022222610) do
     t.string   "zip"
     t.string   "phone"
     t.integer  "capacity"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
     t.float    "lat"
     t.float    "lng"
-    t.integer  "checkins"
+    t.integer  "checkins",   default: 0
   end
 
   create_table "users", force: :cascade do |t|
