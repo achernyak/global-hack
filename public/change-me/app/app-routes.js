@@ -41,7 +41,7 @@
 
     shelter.listView()
       .fields([
-        nga.field('name'),
+        nga.field('name').isDetailLink(true),
         nga.field('address'),
         nga.field('city'),
         nga.field('state'),
@@ -58,8 +58,21 @@
         nga.field('state'),
         nga.field('zip'),
         nga.field('phone'),
-        nga.field('capacity')
-      ]);
+        nga.field('capacity'),
+        nga.field('checkins')
+     ]);
+
+    shelter.showView()
+      .fields([
+        nga.field('name'),
+        nga.field('address'),
+        nga.field('city'),
+        nga.field('state'),
+        nga.field('zip'),
+        nga.field('phone'),
+        nga.field('capacity'),
+        nga.field('checkins')
+        ]);
 
     admin.addEntity(shelter);
 
