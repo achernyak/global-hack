@@ -33,12 +33,21 @@
 	var cords = R.pick(['lat', 'lng'], shelter);
 	var data = {
 	  message: "<div><strong>" + shelter.name + "</strong></div>" +
-	    "<div>" + shelter.phone + "</div>",
-    icon: { iconUrl: "http://localhost:3000/" + shelter.map_icon + ".png", iconSize: [25, 25] }
+	    "<div>" + shelter.phone + "</div>" +
+	    "<div>Availability: " + shelter.checkins + "/" + shelter.capacity + "</div>" +
+	    "<div>" + stars() + "</div>",
+	  icon: { iconUrl: "http://localhost:3000/" + shelter.map_icon + ".png", iconSize: [25, 25] }
 	};
 
 	return R.merge(cords, data);
       }, data);
+
+      function stars() {
+	return R.join('',
+		      R.repeat(
+			"<i class='fa fa-star'></i>",
+			Math.floor(Math.random() * (5 - 1) + 1)));
+      }
 
       $log.info(data[35]);
 

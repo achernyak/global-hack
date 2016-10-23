@@ -26,7 +26,7 @@
     };
 
     vm.dec = function () {
-      $http.patch('http://localhost:3000/shelters/' + id + '/checkin')
+      $http.patch('http://localhost:3000/shelters/' + id + '/checkout')
 	.then(setShelter);
     };
 

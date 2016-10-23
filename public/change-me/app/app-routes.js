@@ -9,11 +9,13 @@
     var nga = NgAdminConfigurationProvider;
 
     var admin = nga
-        .application('Home')
+        .application('@home')
         .baseApiUrl('http://localhost:3000/');
 
     var user = nga.entity('users');
     var shelter = nga.entity('shelters');
+
+    var customHeader = "<img src='/images/home75.png'></img>";
 
     // User
 
@@ -80,6 +82,8 @@
     admin.addEntity(shelter);
     
     // General
+
+    admin.header(customHeader);
 
     admin.menu(nga.menu()
                .addChild(nga.menu(user))
