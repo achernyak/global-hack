@@ -63,6 +63,16 @@
 
     admin.addEntity(shelter);
 
+    admin.menu(nga.menu()
+               .addChild(nga.menu(user))
+               .addChild(nga.menu(shelter))
+               .addChild(nga.menu()
+                         .title('Map')
+                         .link('/map')
+			 .icon('<span class="glyphicon glyphicon-map-marker"></span>')
+                        )
+              );
+
     $urlRouterProvider.otherwise('/dashboard');
 
     $stateProvider

@@ -8,6 +8,7 @@
   function config($stateProvider) {
     $stateProvider
       .state('map', {
+	parent: 'main',
         url: '/map',
         templateUrl: 'map/map.tpl.html',
         controller: 'MapCtrl',

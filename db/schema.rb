@@ -30,7 +30,6 @@ ActiveRecord::Schema.define(version: 20161022222610) do
     t.string   "city"
     t.string   "state"
     t.string   "phone"
-    t.string   "email"
     t.date     "date_of_birth"
     t.string   "gender"
     t.datetime "created_at",    null: false
